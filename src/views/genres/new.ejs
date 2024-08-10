@@ -1,0 +1,11 @@
+<%- include('../layout') %>
+<h1>Crear Género</h1>
+<form action="/genres" method="POST">
+    <div class="form-group">
+        <label for="name">Nombre del Género</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+    <a href="/genres" class="btn btn-secondary">Volver</a>
+</form>
+
