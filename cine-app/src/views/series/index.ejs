@@ -1,0 +1,28 @@
+<%- include('../layout') %>
+<h1>Series</h1>
+<a href="/series/new" class="btn btn-primary mb-3">Crear Serie</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Género</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% series.forEach(serie => { %>
+            <tr>
+                <td><%= serie.name %></td>
+                <td><img src="<%= serie.image %>" alt="<%= serie.name %>" width="100"></td>
+                <td><%= serie.genre %></td>
+                <td>
+                    <a href="/series/<%= serie.id %>/edit" class="btn btn-warning">Editar</a>
+                    <form action="/series/<%= serie.id %>/delete" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
